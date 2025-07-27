@@ -1,0 +1,386 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Cores institucionais militares */
+  --military-green: #4b5320;
+  --institutional-blue: #002776;
+  --brasao-gold: #ffd700;
+  --success-green: #10b981;
+  --alert-red: #ef4444;
+  --text-gray: #374151;
+  --white: #ffffff;
+  --light-background: #f9fafb;
+
+  /* Cores da nova identidade visual */
+  --health-red: #e53e3e;
+  --health-red-dark: #c53030;
+  --primaryBlue: #2b6cb0;
+  --primaryBlueDark: #2c5282;
+  --lightBlue: #4299e1;
+  --skyBlue: #90cdf4;
+  --softGray: #718096;
+  --lightGray: #e2e8f0;
+  --shieldWhite: #ffffff;
+  --borderRed: #fc8181;
+  --success: #48bb78;
+  --warning: #ed8936;
+  --danger: #f56565;
+  --info: #4299e1;
+
+  /* Gradientes institucionais - tons mais suaves */
+  --gradient-primary: linear-gradient(135deg, #2b6cb0 0%, #2c5282 100%);
+  --gradient-secondary: linear-gradient(135deg, #4299e1 0%, #2b6cb0 100%);
+  --gradient-soft: linear-gradient(135deg, #90cdf4 0%, #4299e1 100%);
+  --gradient-hero: linear-gradient(
+    135deg,
+    #2b6cb0 0%,
+    #4299e1 50%,
+    #90cdf4 100%
+  );
+  --gradient-card: linear-gradient(145deg, #ffffff 0%, #f7fafc 100%);
+  --gradient-header: linear-gradient(
+    90deg,
+    #2b6cb0 0%,
+    #4299e1 50%,
+    #2c5282 100%
+  );
+
+  /* Sombras */
+  --shadow-card: 0 4px 6px -1px rgba(43, 108, 176, 0.1),
+    0 2px 4px -1px rgba(43, 108, 176, 0.06);
+  --shadow-card-hover: 0 10px 15px -3px rgba(43, 108, 176, 0.15),
+    0 4px 6px -2px rgba(43, 108, 176, 0.08);
+  --shadow-header: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(43, 108, 176, 0.1);
+  --shadow-military: 0 8px 25px rgba(43, 108, 176, 0.15),
+    0 3px 10px rgba(66, 153, 225, 0.1);
+
+  /* Compatibilidade com sistema antigo */
+  --military-green: var(--primaryBlue);
+  --military-gold: var(--lightBlue);
+  --army-green: var(--primaryBlueDark);
+  --institutional-blue: var(--primaryBlue);
+  --success-green: var(--success);
+  --alert-red: var(--danger);
+  --text-gray: #374151;
+  --light-background: #f9fafb;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animações institucionais específicas da Base */
+@keyframes militaryPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(220, 20, 60, 0);
+  }
+}
+
+@keyframes healthPulse {
+  0%,
+  100% {
+    background-color: #dc143c;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #b01e3c;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+
+/* Classes utilitárias para a nova identidade */
+.badm-gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.badm-gradient-secondary {
+  background: var(--gradient-secondary);
+}
+
+.badm-gradient-military {
+  background: var(--gradient-military);
+}
+
+.badm-gradient-hero {
+  background: var(--gradient-hero);
+}
+
+.badm-gradient-header {
+  background: var(--gradient-header);
+}
+
+.badm-shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.badm-shadow-card-hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.badm-shadow-military {
+  box-shadow: var(--shadow-military);
+}
+
+.badm-text-health-red {
+  color: var(--health-red);
+}
+
+.badm-text-military-gold {
+  color: var(--military-gold);
+}
+
+.badm-text-army-green {
+  color: var(--army-green);
+}
+
+.badm-border-health-red {
+  border-color: var(--health-red);
+}
+
+.badm-border-military-gold {
+  border-color: var(--military-gold);
+}
+
+.badm-bg-health-red {
+  background-color: var(--health-red);
+}
+
+.badm-bg-military-gold {
+  background-color: var(--military-gold);
+}
+
+/* Efeitos especiais para elementos institucionais */
+.institutional-card {
+  background: var(--gradient-card);
+  border: 1px solid var(--health-red-dark);
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.institutional-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+  border-color: var(--health-red);
+}
+
+.military-button {
+  background: var(--gradient-primary);
+  color: var(--shield-white);
+  border: 2px solid var(--borderRed);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.military-button:hover {
+  background: var(--gradient-secondary);
+  border-color: var(--lightBlue);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-military);
+}
+
+.gold-accent {
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    var(--military-gold),
+    var(--military-gold-dark),
+    var(--military-gold)
+  );
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  animation: goldShimmer 2s infinite;
+}
+
+.health-pulse {
+  animation: healthPulse 1.5s infinite;
+}
+
+.military-pulse {
+  animation: militaryPulse 2s infinite;
+}
+
+/* Estilos específicos para brasão/logo */
+.brasao-container {
+  background: radial-gradient(
+    circle,
+    var(--shield-white) 0%,
+    var(--skyBlue) 100%
+  );
+  border: 2px solid var(--borderRed);
+  box-shadow: 0 0 0 1px var(--lightBlue), var(--shadow-military);
+}
+
+/* Header institucional */
+.institutional-header {
+  background: var(--gradient-header);
+  border-bottom: 3px solid var(--borderRed);
+  box-shadow: var(--shadow-header);
+}
+
+/* KPI Cards específicos */
+.kpi-card-critical {
+  border-top: 4px solid var(--health-red);
+}
+
+.kpi-card-warning {
+  border-top: 4px solid var(--warning);
+}
+
+.kpi-card-success {
+  border-top: 4px solid var(--success);
+}
+
+.kpi-card-info {
+  border-top: 4px solid var(--info);
+}
